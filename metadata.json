@@ -1,0 +1,8 @@
+{
+  "name": "Personal Gemini Journal & Brainstorming Hub",
+  "description": "A secure, user-authenticated journaling, SMART goal setting, and brainstorming workspace powered by Gemini 3.6 Flash and Cloud Firestore with automated progress coaching, emotion tagging, and semantic memory search.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "JournalEntry": {
+      "title": "JournalEntry",
+      "description": "A cognitive journal reflection entry",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "mode": { "type": "string" },
+        "messages": { "type": "array" },
+        "metadata": { "type": "object" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "mode", "messages", "createdAt", "updatedAt"]
+    },
+    "SmartGoal": {
+      "title": "SmartGoal",
+      "description": "A SMART goal document",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "specific": { "type": "string" },
+        "measurable": { "type": "string" },
+        "achievable": { "type": "string" },
+        "relevant": { "type": "string" },
+        "timeBound": { "type": "string" },
+        "milestones": { "type": "array" },
+        "progress": { "type": "number" },
+        "checkIns": { "type": "array" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "specific", "measurable", "achievable", "relevant", "timeBound", "milestones", "progress", "status", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile document"
+    },
+    "/users/{userId}/entries/{entryId}": {
+      "schema": "JournalEntry",
+      "description": "User journal entries subcollection"
+    },
+    "/users/{userId}/goals/{goalId}": {
+      "schema": "SmartGoal",
+      "description": "User SMART goals subcollection"
+    }
+  }
+}
